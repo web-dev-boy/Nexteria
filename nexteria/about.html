@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nexteria - Modern Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 40px;
+        }
+        
+        .about-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .about-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .about-section p {
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .creator-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .creator-section h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .creator-info {
+            margin-top: 2rem;
+        }
+        
+        .creator-info strong {
+            font-size: 1.2rem;
+        }
+        
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .stat-item .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4682B4;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="25,5 45,18 45,38 25,45 5,38 5,18" fill="url(#logoGradient)"/>
+                    <text x="25" y="32" font-size="12" fill="white" text-anchor="middle" font-weight="bold">N</text>
+                </svg>
+                <span>Nexteria</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" id="dashboardLink" style="display:none;">Dashboard</a>
+                <button onclick="showLoginModal()">Login</button>
+                <button onclick="showRegisterModal()">Register</button>
+                <button onclick="logout()" id="logoutBtn" style="display:none;">Logout</button>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
+        </nav>
+    </header>
+
+    <div class="about-container">
+        <!-- Hero Section -->
+        <div class="about-hero">
+            <h1>Welcome to Nexteria</h1>
+            <p>A modern, secure, and efficient marketplace designed specifically for sellers to showcase and sell their products with confidence.</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>
+                Nexteria was born from a simple vision: to create a marketplace that prioritizes sellers and their success. We understand the challenges that sellers face in today's competitive e-commerce landscape, and we've built a platform that addresses those challenges head-on.
+            </p>
+            <p>
+                Our mission is to provide sellers with a secure, user-friendly platform where they can focus on what they do best – creating amazing products – while we handle the technical aspects of running an online marketplace.
+            </p>
+            <p>
+                With our transparent commission structure (10% platform fee, 90% to sellers), robust security features, and intuitive interface, Nexteria is redefining what a marketplace can be.
+            </p>
+        </div>
+
+        <!-- Features Section -->
+        <div class="about-section">
+            <h2>Why Choose Nexteria?</h2>
+            <p>Nexteria offers a comprehensive suite of features designed to help sellers succeed:</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔒 Secure Platform</h3>
+                    <p>Advanced security with password hashing, JWT authentication, and protection against brute force attacks and SQL injection.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Fair Commission</h3>
+                    <p>Keep 90% of your sales revenue. Our 10% platform fee helps maintain and improve our services for all sellers.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Real-time Analytics</h3>
+                    <p>Track your sales, earnings, and performance with comprehensive dashboards and reporting tools.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📣 Smart Notifications</h3>
+                    <p>Stay informed with real-time alerts about sales, commissions, and important updates.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔍 Advanced Search</h3>
+                    <p>Powerful search and filtering capabilities help customers discover your products easily.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Secure Payments</h3>
+                    <p>Integrated with Stripe for secure, reliable payment processing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creator Section -->
+        <div class="creator-section">
+            <h2>Created with Passion</h2>
+            <p>Nexteria was developed with dedication to creating a marketplace that puts sellers first.</p>
+            <div class="creator-info">
+                <p><strong>Creator & Developer</strong></p>
+                <p>Designed and built by a passionate developer committed to empowering sellers and revolutionizing e-commerce.</p>
+                <p style="margin-top: 1rem;"><strong>Technology Stack</strong></p>
+                <p>Nexteria is built with modern technologies including Node.js, Express, SQLite, and follows best security practices.</p>
+            </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="about-section" style="text-align: center;">
+            <h2>Ready to Start Selling?</h2>
+            <p>Join thousands of sellers who trust Nexteria to grow their business.</p>
+            <button onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; margin-top: 1rem;">Get Started Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Nexteria</h3>
+                <p>A modern marketplace for sellers to showcase and sell their products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>support@nexteria.com</p>
+                <p>1-800-NEXTARIA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nexteria. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

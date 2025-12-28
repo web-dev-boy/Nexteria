@@ -1,0 +1,40 @@
+            last_login DATETIME,
+            login_attempts INTEGER DEFAULT 0,
+            locked_until DATETIME
+        )
+    `);
+
+    // Categories table
+    db.run(`
+        CREATE TABLE IF NOT EXISTS categories (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE NOT NULL,
+            description TEXT,
+--
+        'SELECT locked_until, login_attempts FROM sellers WHERE email = ?',
+        [email],
+        (err, row) => {
+            if (err) return callback(err);
+            if (!row) return callback(null, false);
+            
+            const now = new Date();
+            const lockedUntil = row.locked_until ? new Date(row.locked_until) : null;
+            
+            if (lockedUntil && lockedUntil > now) {
+                return callback(null, true);
+--
+                // Reset login attempts if lock period has expired
+                db.run(
+                    'UPDATE sellers SET login_attempts = 0, locked_until = NULL WHERE email = ?',
+                    [email],
+                    callback
+                );
+            } else {
+                callback(null, false);
+            }
+        }
+    );
+};
+
+--
+app.post('/api/auth/register', [

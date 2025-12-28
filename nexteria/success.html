@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Nexteria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .success-message {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .order-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✅</div>
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-message">
+            Thank you for your purchase! Your order has been confirmed and the seller has been notified.
+        </p>
+        
+        <div id="loadingMessage">
+            <p>Loading your order details...</p>
+        </div>
+        
+        <div id="orderDetails" style="display: none;">
+            <div class="order-details">
+                <h3>📦 Order Information</h3>
+                <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                <p><strong>Product:</strong> <span id="productName"></span></p>
+                <p><strong>Amount Paid:</strong> $<span id="amount"></span></p>
+                <p><strong>Payment Date:</strong> <span id="paymentDate"></span></p>
+                <p><strong>Seller:</strong> <span id="sellerName"></span></p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn-primary">Continue Shopping</a>
+            <a href="mailto:support@nexteria.com" class="btn-primary">Contact Support</a>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 8px;">
+            <h4>📧 What's Next?</h4>
+            <p>1. You'll receive a confirmation email shortly</p>
+            <p>2. The seller will contact you about shipping</p>
+            <p>3. Track your order in your email</p>
+            <p>4. Leave a review after receiving your item</p>
+        </div>
+    </div>
+
+    <script>
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        if (sessionId) {
+            // In a real implementation, you'd verify the session with your backend
+            // For demo purposes, we'll simulate order details
+            
+            setTimeout(() => {
+                document.getElementById('loadingMessage').style.display = 'none';
+                document.getElementById('orderDetails').style.display = 'block';
+                
+                // Simulate order details (in real app, fetch from backend)
+                document.getElementById('orderId').textContent = 'NX-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                document.getElementById('productName').textContent = 'Premium Product';
+                document.getElementById('amount').textContent = '99.99';
+                document.getElementById('paymentDate').textContent = new Date().toLocaleDateString();
+                document.getElementById('sellerName').textContent = 'Professional Seller';
+            }, 2000);
+        } else {
+            document.getElementById('loadingMessage').innerHTML = '<p style="color: red;">No session information found. Please contact support.</p>';
+        }
+
+        // Send confirmation email notification to customer
+        if (sessionId) {
+            // This would typically be handled by your backend webhook
+            console.log('Payment successful for session:', sessionId);
+        }
+    </script>
+</body>
+</html>

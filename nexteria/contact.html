@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Nexteria - Get in Touch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 40px;
+        }
+        
+        .contact-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-info h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item .icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-item .details h3 {
+            margin-bottom: 0.25rem;
+            color: var(--text-color);
+        }
+        
+        .contact-item .details p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .contact-form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-form-container h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        .faq-section {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .faq-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: "−";
+        }
+        
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .message-box {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+        
+        .message-box.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message-box.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4682B4;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="25,5 45,18 45,38 25,45 5,38 5,18" fill="url(#logoGradient)"/>
+                    <text x="25" y="32" font-size="12" fill="white" text-anchor="middle" font-weight="bold">N</text>
+                </svg>
+                <span>Nexteria</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="dashboard.html" id="dashboardLink" style="display:none;">Dashboard</a>
+                <button onclick="showLoginModal()">Login</button>
+                <button onclick="showRegisterModal()">Register</button>
+                <button onclick="logout()" id="logoutBtn" style="display:none;">Logout</button>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <!-- Hero Section -->
+        <div class="contact-hero">
+            <h1>Get in Touch</h1>
+            <p>Have questions or feedback? We'd love to hear from you. Our team is here to help!</p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <div class="details">
+                        <h3>Address</h3>
+                        <p>123 Marketplace Street<br>E-commerce City, EC 12345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <div class="details">
+                        <h3>Email</h3>
+                        <p>support@nexteria.com</p>
+                        <p>sales@nexteria.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div class="details">
+                        <h3>Phone</h3>
+                        <p>+1 (800) 123-4567</p>
+                        <p>Mon-Fri, 9am-6pm EST</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="icon">💬</div>
+                    <div class="details">
+                        <h3>Live Chat</h3>
+                        <p>Available 24/7</p>
+                        <p>Click chat icon in bottom right</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="icon">⏰</div>
+                    <div class="details">
+                        <h3>Response Time</h3>
+                        <p>Email: Within 24 hours</p>
+                        <p>Phone: Immediate availability</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2>Send us a Message</h2>
+                
+                <div id="messageBox" class="message-box"></div>
+                
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="sales">Sales Question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I register as a seller?</div>
+                <div class="faq-answer">
+                    Simply click the "Register" button on our homepage, fill in your business details, and you'll be ready to start selling in minutes. Registration is free and takes less than 5 minutes.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What are the commission rates?</div>
+                <div class="faq-answer">
+                    We charge a flat 10% commission on all sales. You keep 90% of your revenue. There are no hidden fees or additional charges.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I receive payments?</div>
+                <div class="faq-answer">
+                    We use Stripe for secure payment processing. You'll need to connect your Stripe account during registration, and payments are automatically transferred to your account.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Is my data secure on Nexteria?</div>
+                <div class="faq-answer">
+                    Absolutely! We use industry-standard security measures including password hashing, JWT authentication, and protection against common attacks like SQL injection and brute force attempts.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Can I sell any type of product?</div>
+                <div class="faq-answer">
+                    We welcome most legitimate products. However, we prohibit illegal items, counterfeit goods, and products that violate our terms of service. Please review our seller guidelines for more details.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I track my sales?</div>
+                <div class="faq-answer">
+                    Your seller dashboard provides real-time analytics including total sales, earnings, commission breakdown, and sales history. You can access this anytime after logging in.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Nexteria</h3>
+                <p>A modern marketplace for sellers to showcase and sell their products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>support@nexteria.com</p>
+                <p>1-800-NEXTARIA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nexteria. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const messageBox = document.getElementById('messageBox');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simulate form submission (in production, this would send to a server)
+            setTimeout(() => {
+                // Show success message
+                messageBox.className = 'message-box success';
+                messageBox.style.display = 'block';
+                messageBox.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours.';
+                
+                // Reset form
+                form.reset();
+                
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageBox.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        }
+        
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

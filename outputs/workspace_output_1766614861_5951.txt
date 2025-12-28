@@ -1,0 +1,20 @@
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayNotifications(data.notifications);
+        updateNotificationCount(data.notifications);
+    })
+    .catch(error => {
+        console.error('Error loading notifications:', error);
+    });
+}
+
+function displayNotifications(notifications) {
+    const tbody = document.querySelector('#notificationsTable tbody');
+    tbody.innerHTML = '';
+
+    if (notifications.length === 0) {
+        tbody.innerHTML = '

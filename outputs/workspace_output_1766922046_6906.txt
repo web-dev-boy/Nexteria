@@ -1,0 +1,19 @@
+                <h1>Welcome back, <span id="sellerName">Seller</span>!</h1>
+                <p>Manage your products and track your sales</p>
+            </div>
+            <div>
+                <div class="commission-info">
+                    <strong>Commission Rate:</strong> 10% of sales<br>
+                    <strong>You Keep:</strong> 90% of sales
+                    <br><br>
+                    <div id="notificationBell" style="cursor: pointer;" onclick="showNotifications()">
+                        🔔 Notifications <span id="notificationCount">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="totalProducts">0</div>

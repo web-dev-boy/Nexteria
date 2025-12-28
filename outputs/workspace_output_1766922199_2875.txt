@@ -1,0 +1,11 @@
+function loadDashboardData() {
+    loadCategories();
+       loadPlatformStats();
+    loadStats();
+    loadProducts();
+    loadSales();
+    loadNotifications();
+}
+
+function loadStats() {
+    fetch(API_BASE + '/api/seller/stats', {

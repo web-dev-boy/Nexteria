@@ -1,0 +1,6 @@
+
+// Search products
+app.get('/api/products/search', (req, res) => {
+    const { q, category, min_price, max_price, sort = 'created_at', order = 'DESC' } = req.query;
+    
+    let query = `
