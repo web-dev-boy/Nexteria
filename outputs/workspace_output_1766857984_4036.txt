@@ -1,4 +1,0 @@
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   308  100   194  100   114    687    403 --:--:-- --:--:-- --:--:--  1088
-{"statusCode":400,"message":"bad request: failed to get runner info: 404 Not Found","code":"BAD_REQUEST","timestamp":"2025-12-27T17:53:05.016927392Z","path":"/api/auth/register","method":"POST"}

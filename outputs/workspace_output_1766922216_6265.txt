@@ -1,6 +1,0 @@
-            document.getElementById('sellerName').textContent = currentUser.name;
-        } else {
-            localStorage.removeItem('token');
-            window.location.href = '/';
-        }
-    })

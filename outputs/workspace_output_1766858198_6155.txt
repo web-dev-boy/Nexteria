@@ -1,8 +1,0 @@
-21:    fetch('/api/auth/verify', {
-50:        const response = await fetch('/api/categories');
-76:    fetch('/api/seller/stats', {
-101:    fetch('/api/seller/products', {
-147:    fetch('/api/seller/sales', {
-204:    fetch('/api/products', {
-240:    fetch('/api/sales', {
-318:    fetch('/api/seller/notifications', {

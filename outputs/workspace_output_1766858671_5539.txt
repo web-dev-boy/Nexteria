@@ -1,5 +1,0 @@
-// Nexteria Dashboard JavaScript
-
-let currentUser = null;
-let stats = null;
-

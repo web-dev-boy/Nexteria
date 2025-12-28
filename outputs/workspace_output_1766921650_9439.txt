@@ -1,7 +1,0 @@
-total 12
-drwxr-xr-x 5 root root  104 Dec 28 11:32 .
-drwxr-xr-x 1 root root  162 Dec 28 11:31 ..
-drwxr-xr-x 7 root root 4096 Dec 27 18:57 nexteria
-drwxr-xr-x 2 root root 4096 Dec 28 11:34 outputs
-drwxr-xr-x 2 root root   63 Dec 28 11:32 summarized_conversations
--rw-r--r-- 1 root root 1009 Dec 28 11:34 todo.md

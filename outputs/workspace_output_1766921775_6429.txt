@@ -1,8 +1,0 @@
-8:const API_BASE = window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1') 
-100:        const response = await fetch(API_BASE + '/api/auth/login', {
-146:        const response = await fetch(API_BASE + '/api/auth/register', {
-174:        fetch(API_BASE + '/api/auth/verify', {
-211:        const response = await fetch(API_BASE + '/api/categories');
-231:        const response = await fetch(API_BASE + '/api/products');
-399:        const response = await fetch(API_BASE + '/api/create-payment-intent', {
-434:        const response = await fetch(API_BASE + '/api/sales', {

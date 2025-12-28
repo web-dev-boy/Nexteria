@@ -1,1 +1,0 @@
-199:                <h1>Welcome back, <span id="sellerName">Seller</span>!</h1>

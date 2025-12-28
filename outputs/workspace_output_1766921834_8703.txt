@@ -1,1 +1,0 @@
-442:app.get('/api/auth/verify', authenticateToken, (req, res) => {
