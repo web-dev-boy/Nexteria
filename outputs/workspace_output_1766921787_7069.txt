@@ -1,0 +1,4 @@
+                        message: 'Registration successful',
+                        token,
+                        user: { id: this.lastID, email, name }
+                    });

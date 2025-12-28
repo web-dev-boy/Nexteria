@@ -1,0 +1,46 @@
+            // Insert new seller
+            db.run(
+                'INSERT INTO sellers (name, email, password_hash) VALUES (?, ?, ?)',
+                [name, email, passwordHash],
+                async function(err) {
+                    if (err) {
+                        return res.status(500).json({ message: 'Registration failed' });
+                    }
+
+                    // Send welcome email
+                    await sendWelcomeEmail(email, name);
+
+                    const token = jwt.sign(
+                        { id: this.lastID, email, name },
+                        JWT_SECRET,
+                        { expiresIn: '24h' }
+                    );
+
+                    res.status(201).json({
+                        message: 'Registration successful',
+                        token,
+                        user: { id: this.lastID, email, name }
+                    });
+                }
+            );
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// Login
+app.post('/api/auth/login', [
+    body('email').isEmail().normalizeEmail(),
+    body('password').exists()
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ 
+            message: 'Validation failed', 
+            errors: errors.array() 
+        });
+    }
+
+    const { email, password } = req.body;
+

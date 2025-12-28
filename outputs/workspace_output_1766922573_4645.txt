@@ -1,0 +1,2 @@
+8:const cors = require('cors');
+103:app.use(cors());

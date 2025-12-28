@@ -1,0 +1,31 @@
+app.post('/api/auth/register', [
+    body('name').trim().isLength({ min: 2, max: 100 }).escape(),
+    body('email').isEmail().normalizeEmail(),
+    body('password').isLength({ min: 8 }).matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ 
+            message: 'Validation failed', 
+            errors: errors.array() 
+        });
+    }
+
+    const { name, email, password } = req.body;
+
+    try {
+        // Check if user already exists
+        db.get('SELECT id FROM sellers WHERE email = ?', [email], async (err, row) => {
+            if (err) {
+                return res.status(500).json({ message: 'Database error' });
+            }
+
+            if (row) {
+                return res.status(400).json({ message: 'Email already registered' });
+            }
+
+            // Hash password
+            const saltRounds = 12;
+            const passwordHash = await bcrypt.hash(password, saltRounds);
+
+            // Insert new seller

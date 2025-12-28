@@ -1,0 +1,4 @@
+});
+
+// Search products
+app.get('/api/products/search', (req, res) => {

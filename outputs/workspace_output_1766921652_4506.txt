@@ -1,0 +1,24 @@
+total 392
+drwxr-xr-x 7 root root   4096 Dec 27 18:57 .
+drwxr-xr-x 5 root root    104 Dec 28 11:32 ..
+-rw-r--r-- 1 root root   3067 Dec 27 18:51 .env.example
+-rw-r--r-- 1 root root   6783 Dec 27 18:57 LAUNCH_CHECKLIST.md
+-rw-r--r-- 1 root root   8961 Dec 27 18:42 PRODUCTION_SETUP.md
+-rw-r--r-- 1 root root   8343 Dec 24 22:26 README.md
+-rw-r--r-- 1 root root   6292 Dec 24 22:25 SETUP_GUIDE.md
+-rw-r--r-- 1 root root   3122 Dec 27 18:35 TROUBLESHOOTING.md
+-rw-r--r-- 1 root root   5285 Dec 27 18:49 cancel.html
+drwxr-xr-x 2 root root     31 Dec 24 21:05 css
+-rw-r--r-- 1 root root  11553 Dec 24 22:15 dashboard.html
+drwxr-xr-x 2 root root     36 Dec 27 18:03 database
+-rwxr-xr-x 1 root root   6314 Dec 27 18:54 deploy.sh
+drwxr-xr-x 2 root root     10 Dec 24 20:59 images
+-rw-r--r-- 1 root root   8761 Dec 24 22:08 index.html
+drwxr-xr-x 2 root root     53 Dec 27 18:05 js
+-rw-r--r-- 1 root root 238336 Dec 27 17:52 package-lock.json
+-rw-r--r-- 1 root root    883 Dec 24 21:59 package.json
+-rw-r--r-- 1 root root  15280 Dec 27 18:46 server-enhanced.js
+-rw-r--r-- 1 root root  27394 Dec 24 22:22 server.js
+-rw-r--r-- 1 root root   5411 Dec 27 18:47 success.html
+-rw-r--r-- 1 root root   5341 Dec 27 18:36 test.html
+drwxr-xr-x 2 root root     10 Dec 24 20:59 uploads

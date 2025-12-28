@@ -1,0 +1,6 @@
+function loadDashboardData() {$
+    loadCategories();$
+    loadStats();$
+    loadProducts();$
+    loadSales();$
+    loadNotifications();$

@@ -1,0 +1,5 @@
+                <div class="nav-auth">
+                    <button class="btn btn-outline" onclick="goHome()">View Store</button>
+                    <button class="btn btn-primary" onclick="logout()">Logout</button>
+                </div>
+            </div>

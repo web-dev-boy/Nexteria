@@ -1,0 +1,5 @@
+173:        <nav class="navbar">
+174:            <div class="nav-container">
+186:                <div class="nav-auth">
+187:                    <button class="btn btn-outline" onclick="goHome()">View Store</button>
+191:        </nav>

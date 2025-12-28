@@ -1,0 +1,4 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   431  100   316  100   115    883    321 --:--:-- --:--:-- --:--:--  1207
+{"message":"Registration successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0MTIzQGV4YW1wbGUuY29tIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTc2Njg1ODU5MCwiZXhwIjoxNzY2OTQ0OTkwfQ.NsXiSr0YHPD2WjwE6EN8WrGWIFnTUGh20n7ATmnDbYc","user":{"id":3,"email":"test123@example.com","name":"Test User"}}

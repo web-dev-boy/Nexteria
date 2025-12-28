@@ -1,0 +1,23 @@
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="#87CEEB" stroke-width="2"/>
+                        <path d="M15 15L25 15L25 25L15 25Z" fill="#4682B4" stroke="#4682B4" stroke-width="2"/>
+                        <path d="M10 10L15 15L15 10Z" fill="#87CEEB"/>
+                        <path d="M30 10L25 15L25 10Z" fill="#87CEEB"/>
+                        <path d="M10 30L15 25L15 30Z" fill="#87CEEB"/>
+                        <path d="M30 30L25 25L25 30Z" fill="#87CEEB"/>
+                    </svg>
+                    <span class="logo-text">Nexteria</span>
+                </div>
+                <div class="nav-auth">
+                    <button class="btn btn-outline" onclick="goHome()">View Store</button>
+                    <button class="btn btn-primary" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">

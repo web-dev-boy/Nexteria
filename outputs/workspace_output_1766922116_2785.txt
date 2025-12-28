@@ -1,0 +1,31 @@
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+           <!-- Platform Statistics -->
+           <div class="platform-section">
+               <h2 style="margin-bottom: 1.5rem;">Platform Overview</h2>
+               <div class="stats-grid">
+                   <div class="stat-card">
+                       <div class="stat-value" id="platformSellers">0</div>
+                       <div class="stat-label">Registered Sellers</div>
+                   </div>
+                   <div class="stat-card">
+                       <div class="stat-value" id="platformProducts">0</div>
+                       <div class="stat-label">Platform Products</div>
+                   </div>
+                   <div class="stat-card">
+                       <div class="stat-value" id="platformSales">0</div>
+                       <div class="stat-label">Total Platform Sales</div>
+                   </div>
+                   <div class="stat-card">
+                       <div class="stat-value" id="platformRevenue">$0</div>
+                       <div class="stat-label">Platform Revenue</div>
+                   </div>
+               </div>
+           </div>
+
+           <h2 style="margin: 2rem 0 1rem 0;">Your Statistics</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
